@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "189583664495",
+    "project_id": "projectotisdb",
+    "storage_bucket": "projectotisdb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:189583664495:android:6c4bcb2553705962c1b49a",
+        "android_client_info": {
+          "package_name": "com.example.projectotis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "189583664495-2ld2ou4baa8v8vgm5c9bb8huj7t3jb2o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-cEvv4waCgKNyLs6n-PQFx-TxKqvcsxM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "189583664495-2ld2ou4baa8v8vgm5c9bb8huj7t3jb2o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

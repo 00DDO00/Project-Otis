@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">projectotis</string>
+    <string name="tab_text_1">$</string>
+    <string name="tab_text_2">$$</string>
+    <string name="tab_text_3">$$$</string>
+
+
+    <string name="tutor1_Trait1">Math</string>
+    <string name="tutor1_Trait2">Physics</string>
+    <string name="tutor1_Trait3">Biology</string>
+
+
+    <string name="tutor2_Trait1">Psychology</string>
+    <string name="tutor2_Trait2">Sociology</string>
+    <string name="tutor2_Trait3">English</string>
+
+
+    <string name="tutor3_Trait1">French</string>
+    <string name="tutor3_Trait2">Economics</string>
+    <string name="tutor3_Trait3">Biology</string>
+
+    <string name="servicesSelect">What do you need help with? Please select.</string>
+
+
+
+</resources>
