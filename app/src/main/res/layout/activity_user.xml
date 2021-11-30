@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    tools:context="UserActivity">
+
+    <Button
+        android:id="@+id/btnLogOut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="#000000"
+        android:fontFamily="@font/holtwood_one_scproject"
+        android:text="Logout"
+        android:textSize="16sp"
+        app:backgroundTint="@color/purple_500" />
+
+    <Button
+        android:id="@+id/btnProfile"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:background="#000000"
+        android:backgroundTint="#8BC34A"
+        android:fontFamily="@font/holtwood_one_scproject"
+        android:text="Hire a lawyer"
+        android:textSize="20sp"
+        app:backgroundTint="#020005" />
+
+    <TextView
+        android:id="@+id/greetText"
+        android:layout_width="336dp"
+        android:layout_height="260dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="340dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="131dp"
+        android:text="Welcome to OTIS"
+        android:textAlignment="center"
+        android:textColor="#A2A8A2"
+        android:textSize="40sp" />
+
+    <ImageView
+        android:id="@+id/userPicture"
+        android:layout_width="164dp"
+        android:layout_height="158dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="111dp"
+        android:layout_marginBottom="503dp"
+        android:visibility="invisible"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/txtAddPicPls"
+        android:layout_width="165dp"
+        android:layout_height="56dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="111dp"
+        android:layout_marginBottom="465dp"
+        android:text="Click To\n Add Your Picture"
+        android:textAlignment="center"
+        android:textSize="17sp" />
+
+    <ImageButton
+        android:id="@+id/btnAddUserImage"
+        android:layout_width="131dp"
+        android:layout_height="96dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="128dp"
+        android:layout_marginBottom="558dp"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="fitCenter"
+        android:src="@drawable/plus" />
+
+    <!--
+    <androidx.cardview.widget.CardView
+        android:id="@+id/myCardView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="83dp"
+        android:layout_marginEnd="163dp"
+        android:layout_marginBottom="568dp"
+        android:elevation="12dp"
+        android:innerRadius="0dp"
+        android:shape="ring"
+        android:thicknessRatio="1.9"
+        app:cardCornerRadius="40dp" />
+        -->
+
+    <ImageView
+        android:id="@+id/displayUserImg"
+        android:layout_width="144dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="134dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="133dp"
+        android:layout_marginBottom="531dp"
+        android:outlineAmbientShadowColor="#1B061E"
+        android:outlineProvider="bounds"
+        android:src="@drawable/otis" />
+    <!--
+    </androidx.support.v7.widget.CardView>
+    -->
+
+</RelativeLayout>
