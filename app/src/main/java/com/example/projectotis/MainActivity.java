@@ -10,6 +10,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.projectotis.databinding.ActivityMainBinding;
 import com.example.projectotis.main.SectionsPagerAdapter;
+import com.example.projectotis.main.SectionsPagerAdapterInnerFrags;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.database.DatabaseReference;
@@ -37,9 +38,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
+        SectionsPagerAdapterInnerFrags sectionsPagerAdapterInnerFrags = new SectionsPagerAdapterInnerFrags(this, getSupportFragmentManager());
 
         ViewPager viewPager = binding.viewPager;
         viewPager.setAdapter(sectionsPagerAdapter);
+
+        ViewPager viewPagerInnerFrags = binding.viewPagerInner;
+        viewPagerInnerFrags.setAdapter(sectionsPagerAdapterInnerFrags);
+
 
         TabLayout tabs = binding.tabs;
         tabs.setupWithViewPager(viewPager);

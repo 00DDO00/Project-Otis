@@ -19,9 +19,10 @@ public class ForumActivity extends AppCompatActivity {
         ImageButton btnHome = (ImageButton) findViewById(R.id.btnHome);
 
 
-
         WebView myWebView = (WebView) findViewById(R.id.redditForum);
-        myWebView.loadUrl("https://www.reddit.com/r/projectotisforum/");
+        //myWebView.loadUrl("https://www.reddit.com/r/projectotisforum/");
+        myWebView.loadUrl("https://www.proboards.com/");
+
 
 
         btnHome.setOnClickListener(new View.OnClickListener() {

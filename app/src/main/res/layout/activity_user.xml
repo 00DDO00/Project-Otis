@@ -30,7 +30,7 @@
         android:background="#000000"
         android:backgroundTint="#8BC34A"
         android:fontFamily="@font/holtwood_one_scproject"
-        android:text="Hire a lawyer"
+        android:text="Hire a tutor"
         android:textSize="20sp"
         app:backgroundTint="#020005" />
 

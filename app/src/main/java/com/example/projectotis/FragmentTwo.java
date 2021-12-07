@@ -2,6 +2,7 @@ package com.example.projectotis;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +15,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
+import com.example.projectotis.databinding.ActivityMainBinding;
+import com.example.projectotis.databinding.FragmentTwoBinding;
+import com.example.projectotis.main.SectionsPagerAdapterInnerFrags;
+import com.example.projectotis.main.SectionsPagerAdapterInnerFrags2;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,6 +28,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class FragmentTwo extends Fragment {
+
+    private FragmentTwoBinding binding;
+
 
     ImageView img2;
 
@@ -45,75 +54,24 @@ public class FragmentTwo extends Fragment {
     private TextView lawyerInfoDatabase;
     private TextView lawyerNameDatabase;
 
+    private final Handler handler = new Handler();
+    private Runnable runPager;
+
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_two, container, false);
-        //View rootView = inflater.inflate(R.layout.fragment_one, container, false);
 
 
-        // Database get and setText code
-        // below line is used to get the instance
-        // of our Firebase database.
-        /*
-        try {
-            databaseReference2 = firebaseDatabase.getReference("Data2");
-        } catch (NullPointerException e)
-        {
-            System.out.println("Shits null bruv");
-            Log.e("FragmentTwo", "failed bro");
-        }
+        binding = FragmentTwoBinding.inflate(getLayoutInflater());
+        //binding = inflater.inflate(R.layout.fragment_one, container, false);
+        //View view = binding.getRoot();
 
-        try {
-            databaseReferenceName2 = firebaseDatabase.getReference("Name2");
-        } catch (NullPointerException e)
-        {
-            System.out.println("Shits null bruv");
-            Log.e("FragmentTwo", "failed bro");
-        }
-
-         */
-
-        firebaseDatabase = FirebaseDatabase.getInstance();
-
-        /*
-        databaseReference2 = firebaseDatabase.getReference();
-
-         myRef =  databaseReference2.child("LaywerData").child("Data2");
-         myRef2 =  databaseReference2.child("Name2").child("Name2");
-
-         */
-        databaseReference2 = firebaseDatabase.getReference("TutorData").child("Data2");
-        databaseReferenceName2 = firebaseDatabase.getReference("TutorName").child("Name2");
-
-
-
-        // initializing our object class variable.
-        lawyerInfoDatabase = root.findViewById(R.id.lawyerInfo2);
-        lawyerNameDatabase = root.findViewById(R.id.lawyer2Name);
-
-        getdata();
-
-        img2 = (ImageView) root.findViewById(R.id.lawyerPhoto2);
-
-        Drawable myDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.nelly_korda, null);
-
-        img2.setImageDrawable(myDrawable);
-
-        spinner = (Spinner) root.findViewById(R.id.optionsList2);
-
-        // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, services);
-        // Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //apply the adapter to the spinner
-        spinner.setAdapter(adapter);
-
-
-
-        //return inflater.inflate(R.layout.fragment_one, container, false);
+        SectionsPagerAdapterInnerFrags2 sectionsPagerAdapterInnerFrags2 = new SectionsPagerAdapterInnerFrags2(this, getFragmentManager());
+        ViewPager viewPagerInnerFrags = binding.viewPagerInnerFragTwo;
+        viewPagerInnerFrags.setAdapter(sectionsPagerAdapterInnerFrags2);
 
         return root;
 
@@ -123,7 +81,39 @@ public class FragmentTwo extends Fragment {
     }
 
 
+/*
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState)
+    {
+        super.onActivityCreated(savedInstanceState);
+        runPager = new Runnable() {
 
+            @Override
+            public void run()
+            {
+                getFragmentManager().beginTransaction().add(R.id.view_pager_inner_FragOne, FragmentTwo.newInstance()).commit();
+                getFragmentManager().beginTransaction().add(R.id.view_pager_inner_FragTwo, FragmentTwo.newInstance()).commit();
+                //getFragmentManager().beginTransaction().add(R.id.view_pager_inner_FragThree, FragmentTwo.newInstance()).commit();
+
+            }
+        };
+        handler.post(runPager);
+    }
+
+    public static FragmentTwo newInstance() {
+        return new FragmentTwo();
+    }
+
+
+    @Override
+    public void onPause()
+    {
+        super.onPause();
+        handler.removeCallbacks(runPager);
+    }
+
+
+ */
 
     //Get Firebase data function
     private void getdata() {

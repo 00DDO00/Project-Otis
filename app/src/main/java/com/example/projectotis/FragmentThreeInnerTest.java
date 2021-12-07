@@ -2,7 +2,6 @@ package com.example.projectotis;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,21 +14,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
 
-import com.example.projectotis.databinding.FragmentThreeBinding;
-import com.example.projectotis.databinding.FragmentTwoBinding;
-import com.example.projectotis.main.SectionsPagerAdapterInnerFrags2;
-import com.example.projectotis.main.SectionsPagerAdapterInnerFrags3;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class FragmentThree extends Fragment {
-
-    private FragmentThreeBinding binding;
+public class FragmentThreeInnerTest extends Fragment {
 
     ImageView img;
 
@@ -48,24 +40,79 @@ public class FragmentThree extends Fragment {
     private TextView lawyerInfoDatabase;
     private TextView lawyerNameDatabase;
 
-    private final Handler handler = new Handler();
-    private Runnable runPager;
-
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_three, container, false);
+        //View rootView = inflater.inflate(R.layout.fragment_one, container, false);
 
 
-        binding = FragmentThreeBinding.inflate(getLayoutInflater());
-        //binding = inflater.inflate(R.layout.fragment_one, container, false);
-        //View view = binding.getRoot();
+        firebaseDatabase = FirebaseDatabase.getInstance();
 
-        SectionsPagerAdapterInnerFrags3 sectionsPagerAdapterInnerFrags3 = new SectionsPagerAdapterInnerFrags3(this, getFragmentManager());
-        ViewPager viewPagerInnerFrags = binding.viewPagerInnerFragThree;
-        viewPagerInnerFrags.setAdapter(sectionsPagerAdapterInnerFrags3);
+
+
+        // initializing our object class variable.
+        lawyerInfoDatabase = root.findViewById(R.id.lawyerInfo3);
+        lawyerNameDatabase = root.findViewById(R.id.lawyer3Name);
+
+        /*
+         // calling method
+         // for getting data.
+        if (root.findViewById(R.id.testbtn).isClickable()) {
+            databaseReference3 = firebaseDatabase.getReference("Data3");
+            databaseReferenceName3 = firebaseDatabase.getReference("Name3");
+            getdata();
+        }
+        else if (!root.findViewById(R.id.testbtn).isClickable())
+        {
+            try {
+                databaseReference3 = firebaseDatabase.getReference("Data3");
+                databaseReferenceName3 = firebaseDatabase.getReference("Name3");
+               getdata();
+            } catch (NullPointerException e)
+            {
+                System.out.println("Shits null bruv");
+                Log.e("FragmentThree", "failed bro");
+            }
+
+            try {
+                getdata();
+            } catch (NullPointerException e)
+            {
+                System.out.println("Shits null bruv");
+                Log.e("FragmentThree", "failed bro");
+            }
+        }
+
+         */
+
+        databaseReference3 = firebaseDatabase.getReference("TutorData").child("Data3");
+        databaseReferenceName3 = firebaseDatabase.getReference("TutorName").child("Name3");
+
+        getdata();
+
+
+        img = (ImageView) root.findViewById(R.id.lawyerPhoto3);
+
+
+        Drawable myDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.vhovland, null);
+
+        img.setImageDrawable(myDrawable);
+
+        spinner = (Spinner) root.findViewById(R.id.optionsList3);
+
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, services);
+        // Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //apply the adapter to the spinner
+        spinner.setAdapter(adapter);
+
+
+
+        //return inflater.inflate(R.layout.fragment_one, container, false);
 
         return root;
 
@@ -75,38 +122,6 @@ public class FragmentThree extends Fragment {
 
     }
 
-/*
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState)
-    {
-        super.onActivityCreated(savedInstanceState);
-        runPager = new Runnable() {
-
-            @Override
-            public void run()
-            {
-                getFragmentManager().beginTransaction().add(R.id.view_pager_inner_FragOne, FragmentThree.newInstance()).commit();
-                getFragmentManager().beginTransaction().add(R.id.view_pager_inner_FragTwo, FragmentThree.newInstance()).commit();
-                //getFragmentManager().beginTransaction().add(R.id.view_pager_inner_FragThree, FragmentThree.newInstance()).commit();
-
-            }
-        };
-        handler.post(runPager);
-    }
-
-    public static FragmentThree newInstance() {
-        return new FragmentThree();
-    }
-
-
-    @Override
-    public void onPause()
-    {
-        super.onPause();
-        handler.removeCallbacks(runPager);
-    }
-
- */
 
 
     //Get Firebase data function
