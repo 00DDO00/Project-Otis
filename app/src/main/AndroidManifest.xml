@@ -30,6 +30,18 @@
             android:theme="@style/Theme.projectotis.NoActionBar">
         </activity>
         <activity
+            android:name=".MainActivitySS"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.projectotis.NoActionBar">
+        </activity>
+        <activity
+            android:name=".MainActivitySSS"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.projectotis.NoActionBar">
+        </activity>
+        <activity
             android:name=".ActivityLogin"
             android:exported="true"
             android:label="@string/app_name"

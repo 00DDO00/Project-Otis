@@ -12,12 +12,12 @@ import androidx.viewpager.widget.ViewPager;
 import com.example.projectotis.databinding.ActivityMainBinding;
 import com.example.projectotis.main.SectionsPagerAdapter;
 import com.example.projectotis.main.SectionsPagerAdapterInnerFrags;
+import com.example.projectotis.main.SectionsPagerAdapterInnerFragsSSS;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivitySSS extends AppCompatActivity {
 
     private ActivityMainBinding binding;
 
@@ -39,33 +39,31 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         //SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
-        SectionsPagerAdapterInnerFrags sectionsPagerAdapterInnerFrags = new SectionsPagerAdapterInnerFrags(this, getSupportFragmentManager());
+        SectionsPagerAdapterInnerFragsSSS sectionsPagerAdapterInnerFragsSSS = new SectionsPagerAdapterInnerFragsSSS(this, getSupportFragmentManager());
 
         //ViewPager viewPager = binding.viewPager;
         //viewPager.setAdapter(sectionsPagerAdapter);
 
         ViewPager viewPagerInnerFrags = binding.viewPagerInner;
-        viewPagerInnerFrags.setAdapter(sectionsPagerAdapterInnerFrags);
+        viewPagerInnerFrags.setAdapter(sectionsPagerAdapterInnerFragsSSS);
 
+        Button btnS = (Button) findViewById(R.id.btnS);
+
+        btnS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivitySSS.this, MainActivity.class));
+            }
+        });
 
         Button btnSS = (Button) findViewById(R.id.btnSS);
 
         btnSS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, MainActivitySS.class));
+                startActivity(new Intent(MainActivitySSS.this, MainActivitySS.class));
             }
         });
-
-        Button btnSSS = (Button) findViewById(R.id.btnSSS);
-
-        btnSSS.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, MainActivitySSS.class));
-            }
-        });
-
 
 
         //TabLayout tabs = binding.tabs;
@@ -75,10 +73,9 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, com.example.projectotis.ForumActivity.class));
+                startActivity(new Intent(MainActivitySSS.this, ForumActivity.class));
             }
         });
-
 
         /**
         //Database get and setText code

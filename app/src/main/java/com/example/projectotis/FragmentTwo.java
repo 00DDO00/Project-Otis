@@ -65,6 +65,7 @@ public class FragmentTwo extends Fragment {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_two, container, false);
 
 
+        /*
         binding = FragmentTwoBinding.inflate(getLayoutInflater());
         //binding = inflater.inflate(R.layout.fragment_one, container, false);
         //View view = binding.getRoot();
@@ -73,6 +74,8 @@ public class FragmentTwo extends Fragment {
         ViewPager viewPagerInnerFrags = binding.viewPagerInnerFragTwo;
         viewPagerInnerFrags.setAdapter(sectionsPagerAdapterInnerFrags2);
 
+
+         */
         return root;
 
 

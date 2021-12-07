@@ -59,6 +59,7 @@ public class FragmentThree extends Fragment {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_three, container, false);
 
 
+        /*
         binding = FragmentThreeBinding.inflate(getLayoutInflater());
         //binding = inflater.inflate(R.layout.fragment_one, container, false);
         //View view = binding.getRoot();
@@ -67,6 +68,8 @@ public class FragmentThree extends Fragment {
         ViewPager viewPagerInnerFrags = binding.viewPagerInnerFragThree;
         viewPagerInnerFrags.setAdapter(sectionsPagerAdapterInnerFrags3);
 
+
+         */
         return root;
 
 
