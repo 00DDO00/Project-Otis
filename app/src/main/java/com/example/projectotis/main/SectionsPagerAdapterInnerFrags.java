@@ -2,17 +2,13 @@ package com.example.projectotis.main;
 
 import android.content.Context;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.projectotis.FragmentOne;
 import com.example.projectotis.FragmentOneInnerTest;
-import com.example.projectotis.FragmentThree;
 import com.example.projectotis.FragmentThreeInnerTest;
-import com.example.projectotis.FragmentTwo;
 import com.example.projectotis.FragmentTwoInnerTest;
 import com.example.projectotis.R;
 

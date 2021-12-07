@@ -10,8 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.projectotis.databinding.ActivityMainBinding;
-import com.example.projectotis.main.SectionsPagerAdapter;
-import com.example.projectotis.main.SectionsPagerAdapterInnerFrags;
 import com.example.projectotis.main.SectionsPagerAdapterInnerFragsSSS;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DatabaseReference;

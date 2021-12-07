@@ -11,6 +11,10 @@ import com.example.projectotis.FragmentOneInnerTest;
 import com.example.projectotis.FragmentThreeInnerTest;
 import com.example.projectotis.FragmentTwoInnerTest;
 import com.example.projectotis.R;
+import com.example.projectotis.SSFragmentOneInnerTest;
+import com.example.projectotis.SSSFragmentOneInnerTest;
+import com.example.projectotis.SSSFragmentThreeInnerTest;
+import com.example.projectotis.SSSFragmentTwoInnerTest;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
@@ -39,13 +43,13 @@ public class SectionsPagerAdapterInnerFragsSSS extends FragmentPagerAdapter {
         switch(position)
         {
             case 0:
-                fragment = new FragmentOneInnerTest();
+                fragment = new SSSFragmentOneInnerTest();
                 break;
             case 1:
-                fragment = new FragmentTwoInnerTest();
+                fragment = new SSSFragmentTwoInnerTest();
                 break;
             case 2:
-                fragment = new FragmentThreeInnerTest();
+                fragment = new SSSFragmentThreeInnerTest();
                 break;
 
 
