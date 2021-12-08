@@ -33,6 +33,8 @@ public class MainActivitySS extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //Code below is for attaching the appropriate fragments stated in the corresponding SectionsPagerAdapter.
+        //By binding them to the viewpager.
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -53,6 +55,7 @@ public class MainActivitySS extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivitySS.this, MainActivity.class));
+                finish();
             }
         });
 
@@ -62,6 +65,7 @@ public class MainActivitySS extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivitySS.this, MainActivitySSS.class));
+                finish();
             }
         });
 

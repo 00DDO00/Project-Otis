@@ -56,7 +56,7 @@ public class SSSFragmentThreeInnerTest extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_one, container, false);
+        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_three, container, false);
         //View rootView = inflater.inflate(R.layout.fragment_one, container, false);
 
         // Database get and setText code
@@ -69,6 +69,7 @@ public class SSSFragmentThreeInnerTest extends Fragment {
 
         databaseReference = firebaseDatabase.getReference("TutorDataSSS").child("Data3");
         databaseReferenceName = firebaseDatabase.getReference("TutorNameSSS").child("Name3");
+
 
         //databaseReference = firebaseDatabase.getReference("Data");
         //databaseReferenceName = firebaseDatabase.getReference("Name1");
@@ -94,8 +95,8 @@ public class SSSFragmentThreeInnerTest extends Fragment {
 
 
         // initializing our object class variable.
-        lawyerInfoDatabase = root.findViewById(R.id.lawyerInfo1);
-        lawyerNameDatabase = root.findViewById(R.id.lawyer1Name);
+        lawyerInfoDatabase = root.findViewById(R.id.lawyerInfo3);
+        lawyerNameDatabase = root.findViewById(R.id.lawyer3Name);
 
          /*
          lawyerInfoDatabase2 = root.findViewById(R.id.lawyerInfo2);
@@ -111,14 +112,14 @@ public class SSSFragmentThreeInnerTest extends Fragment {
         getdata();
 
 
-        img = (ImageView) root.findViewById(R.id.lawyerPhoto1);
+        img = (ImageView) root.findViewById(R.id.lawyerPhoto3);
 
 
-        Drawable myDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.rory, null);
+        Drawable myDrawable = ResourcesCompat.getDrawable(getResources(), R.drawable.keanureeves, null);
 
         img.setImageDrawable(myDrawable);
 
-        spinner = (Spinner) root.findViewById(R.id.optionsList1);
+        spinner = (Spinner) root.findViewById(R.id.optionsList3);
 
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, services);
@@ -201,123 +202,7 @@ public class SSSFragmentThreeInnerTest extends Fragment {
 
 
         });
-/*
 
-        databaseReference2.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                // this method is call to get the realtime
-                // updates in the data.
-                // this method is called when the data is
-                // changed in our Firebase console.
-                // below line is for getting the data from
-                // snapshot of our database.
-                String value = snapshot.getValue(String.class);
-
-                // after getting the value we are setting
-                // our value to our text view in below line.
-                lawyerInfoDatabase2.setText(value);
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                // calling on cancelled method when we receive
-                // any error or we are not able to get the data.
-                //Toast.makeText(FragmentOne.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
-            }
-
-
-        });
-
-
-        //Gets the Name attribute with its value belonging to this lawyer(2nd one)
-        databaseReferenceName2.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                // this method is called to get the realtime
-                // updates in the data.
-                // this method is called when the data is
-                // changed in our Firebase console.
-                // below line is for getting the data from
-                // snapshot of our database.
-                String value = snapshot.getValue(String.class);
-
-                // after getting the value we are setting
-                // our value to our text view in below line.
-                lawyerNameDatabase2.setText(value);
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                // calling on cancelled method when we receive
-                // any error or we are not able to get the data.
-                //Toast.makeText(MainActivity.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
-            }
-
-
-        });
-
-
-
-        databaseReference3.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                // this method is call to get the realtime
-                // updates in the data.
-                // this method is called when the data is
-                // changed in our Firebase console.
-                // below line is for getting the data from
-                // snapshot of our database.
-                String value = snapshot.getValue(String.class);
-
-                // after getting the value we are setting
-                // our value to our text view in below line.
-                lawyerInfoDatabase3.setText(value);
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                // calling on cancelled method when we receive
-                // any error or we are not able to get the data.
-                //Toast.makeText(MainActivity.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
-            }
-
-
-        });
-
-
-        //Gets the Name attribute with its value belonging to this lawyer(3rd one)
-        databaseReferenceName3.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                // this method is called to get the realtime
-                // updates in the data.
-                // this method is called when the data is
-                // changed in our Firebase console.
-                // below line is for getting the data from
-                // snapshot of our database.
-                String value = snapshot.getValue(String.class);
-
-                // after getting the value we are setting
-                // our value to our text view in below line.
-                lawyerNameDatabase3.setText(value);
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                // calling on cancelled method when we receive
-                // any error or we are not able to get the data.
-                //Toast.makeText(MainActivity.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
-            }
-
-
-        });
-
-         */
 
 
     }
